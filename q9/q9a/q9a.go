@@ -19,7 +19,7 @@ func getAreas(points [][]int, current int) []int {
 
 		x2, y2 := points[current][0], points[current][1]
 
-		area := math.Abs(float64(x2 - point[0] + 1)) * math.Abs(float64(y2 - point[1] + 1))
+		area := math.Abs(float64(x2-point[0]+1)) * math.Abs(float64(y2-point[1]+1))
 
 		fmt.Println("Point:", point, "Current:", points[current], "Area:", area)
 
@@ -53,7 +53,7 @@ func main() {
 		return
 	}
 
-	scanner := bufio.NewScanner(file) 
+	scanner := bufio.NewScanner(file)
 
 	points := make([][]int, 0)
 	for scanner.Scan() {
@@ -71,14 +71,11 @@ func main() {
 
 		point := []int{x, y}
 
-
 		points = append(points, point)
 	}
 
 	fmt.Println(points)
 
 	fmt.Println("Largest Area:", getLargestArea(points))
-
-
 
 }
